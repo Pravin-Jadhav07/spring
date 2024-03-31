@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- normal way -->
+<!--    <bean id="alien" class="org.jadhav.model.Alien" >-->
+<!--        <property name="age" value="23" />-->
+<!--        <property name="com" ref="com1" />-->
+<!--    </bean>-->
+<!--    <bean id="com" class="org.jadhav.model.Laptop" />-->
+<!--    <bean id="com1" class="org.jadhav.model.Desktop" />-->
+
+<!--    &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+
+    <!-- Autowired byName -->
+<!--    <bean id="alien" class="org.jadhav.model.Alien" autowire="byName" >-->
+<!--        <property name="age" value="23" />-->
+<!--    </bean>-->
+<!--    &lt;!&ndash; here object creation is depend on property name of Alien class&ndash;&gt;-->
+<!--    &lt;!&ndash; if we mention com this object will be created.&ndash;&gt;-->
+<!--    <bean id="com" class="org.jadhav.model.Laptop" />-->
+<!--    -->
+<!--    &lt;!&ndash; if we mention com1 this object will be created.&ndash;&gt;-->
+<!--    <bean id="com1" class="org.jadhav.model.Desktop" />-->
+
+<!--    &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+
+    <!-- Autowired byType -->
+    <bean id="alien" class="org.jadhav.model.Alien" autowire="byType" >
+            <property name="age" value="23" />
+    </bean>
+
+<!--    both classes same type which means both implement Computer it will throw an exception to overcome this we use primary="true" so it will use that primary object.-->
+    <bean id="laptop" class="org.jadhav.model.Laptop" primary="true" />
+    <bean id="desktop" class="org.jadhav.model.Desktop" />
+
+</beans>
