@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- default scope is singleton -->
+<!--    when the  new ClassPathXmlApplicationContext("spring.xml") executed spring container loaded and only one bean is created for all the classes.-->
+<!--    here every time same bean is created when we call getBean() method.-->
+<!--    <bean id="alien" class="org.jadhav.Alien" />-->
+
+    <!-- here scope is prototype -->
+<!--    when the  new ClassPathXmlApplicationContext("spring.xml") executed spring container loaded and not single bean is created of all the classes.-->
+<!--    here every time new bean is created when we call getBean() method.-->
+    <bean id="alien" class="org.jadhav.Alien" scope="prototype" />
+
+</beans>
