@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+        <bean id="alien" class="org.jadhav.model.Alien">
+                <!--setter injection-->
+<!--                <property name="age" value="23"/>-->
+<!--                <property name="lap" ref="laptop"/>-->
+
+                <!--constructor injection-->
+<!--                1. sending constructor para sequencially-->
+<!--                <constructor-arg value="23" />-->
+<!--                <constructor-arg ref="laptop" />-->
+
+<!--                2. sending constructor para not sequencially but using index -->
+<!--                <constructor-arg index="1" ref="laptop" />-->
+<!--                <constructor-arg index="0" value="23" />-->
+
+<!--                3. sending constructor para not sequencially but using type -->
+<!--                Note: here all the parameters of Alien class should different.-->
+                <constructor-arg type="Laptop" ref="laptop" />
+                <constructor-arg type="int" value="23" />
+
+        </bean>
+
+        <bean id="laptop" class="org.jadhav.model.Laptop">
+                <property name="name" value="macbook" />
+        </bean>
+
+</beans>
